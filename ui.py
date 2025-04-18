@@ -12,7 +12,7 @@ class UI:
 
         pygame.init()
         self.screen = pygame.display.set_mode((self.width, self.height))
-        pygame.display.set_caption("Star Wars Maze Game")
+        pygame.display.set_caption("Star Wars Labirent Oyunu")
 
         self.colors = {
             "wall": (0, 0, 0),
@@ -242,7 +242,7 @@ class UI:
         heart_size = self.cell_size // 2
         lives = player.lives
 
-        lives_text = self.small_font.render(f"Lives: {lives}", True, (255, 255, 255))
+        lives_text = self.small_font.render(f"Can: {lives}", True, (255, 255, 255))
         self.screen.blit(lives_text, (10, 10))
 
         if "heart" in self.images and "half_heart" in self.images:
@@ -271,7 +271,7 @@ class UI:
     def show_start_screen(self):
         self.screen.fill((0, 0, 0))
 
-        title = self.font.render("Star Wars Maze", True, (255, 255, 0))
+        title = self.font.render("Star Wars Labirent", True, (255, 255, 0))
         subtitle = self.small_font.render("Karakterinizi seçin:", True, (255, 255, 255))
 
         luke_text = self.font.render("1 - Luke Skywalker", True, (255, 255, 255))
@@ -322,7 +322,7 @@ class UI:
         self.screen.blit(overlay, (0, 0))
 
         game_over_text = self.font.render("GAME OVER", True, (255, 0, 0))
-        instruction = self.small_font.render("Press SPACE to play again, ESC to quit, or M to return to menu", True,(255, 255, 255))
+        instruction = self.small_font.render("Tekrar Oynamak için SPACE Tuşuna, Çıkmak İçin ESC, Menüye Dönmek için M Tuşuna Basınız", True,(255, 255, 255))
 
         game_over_rect = game_over_text.get_rect(center=(self.width // 2, self.height // 2))
         instruction_rect = instruction.get_rect(center=(self.width // 2, self.height // 2 + 50))
